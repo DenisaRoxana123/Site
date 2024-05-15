@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glam Galaxy</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <!-- bootstrap links -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- bootstrap links -->
+    <!-- fonts links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <!-- fonts links -->
+</head>
+<body>
+<!-- navbar -->
+<nav class="navbar navbar-expand-lg" id="navbar">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#" id="logo"><img src="./images/logo.png" alt=""></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span><i class="fa-solid fa-bars" style="color: white; font-size: 23px;"></i></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <!-- Butonul de căutare și butoanele "Home", "About", "Products", "Contact" și "Blogs" -->
+        <form class="d-flex me-auto mb-2 mb-lg-0">
+           
+        </form>
+        <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="product.html">Products</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="review.html">Review</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- navbar -->
+
+<!-- contact -->
+<section class="contact" id="contact">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-7">
+        <!-- Formularul de contact -->
+        <div class="heading6">Contact <span>Us</span></div>
+        <p>Contactează-ne direct pentru sfaturi personalizate și răspunsuri la întrebările tale despre produsele noastre de makeup. Suntem aici să te ajutăm să strălucești!</p>
+        <form class="d-flex flex-column" onsubmit="return validateForm()">
+          <input id="name" class="form-control" type="text" placeholder="Name" aria-label="default input example"><br>
+          <input id="email" class="form-control" type="email" placeholder="Email" aria-label="default input example"><br>
+          <textarea id="message" class="form-control" rows="2" placeholder="Message"></textarea><br>
+          <button id="contact-btn">Send Message</button>
+        </form>
+        <!-- Afișare mesaj de confirmare -->
+        <div id="confirmation" class="alert alert-success mt-3" role="alert" style="display: none;">
+          Mesajul a fost trimis cu succes!
+        </div>
+      </div>
+      <div class="col-md-5" id="col">
+        <!-- Informațiile de contact -->
+        <h1>Info</h1>
+        <p><i class="fa-regular fa-envelope"></i> glamgalaxy@gmail.com</p>
+        <p><i class="fa-solid fa-phone"></i> +40765345239</p>
+        <p><i class="fa-solid fa-building-columns"></i> Strada Mălinului, nr. 10</p>
+        <p>Pentru orice întrebări sau asistență, contactați-ne. Suntem aici pentru dumneavoastră!</p>
+      </div>
+    </div>
+  </div>
+  
+</section>
+
+<script>
+  // Funcția de validare
+function validateForm() {
+  var name = document.getElementById('name').value;
+  var email = document.getElementById('email').value;
+  var message = document.getElementById('message').value;
+
+  // Verificare dacă toate câmpurile sunt completate
+  if (name == "" || email == "" || message == "") {
+    alert("Te rugăm să completezi toate câmpurile!");
+    return false;
+  }
+
+  // Verificare formatul email-ului folosind o expresie regulată simplă
+  var emailPattern = /^\S+@\S+\.\S+$/;
+  if (!emailPattern.test(email)) {
+    alert("Te rugăm să introduci o adresă de email validă!");
+    return false;
+  }
+
+  // Afișăm mesajul de succes și returnăm true
+  document.getElementById('confirmation').style.display = "block";
+  setTimeout(function(){
+    document.getElementById('confirmation').style.display = "none";
+  }, 100000); // Ascunde mesajul după 3 secunde (3000 milisecunde)
+  return true; // Returnăm true dacă formularul este completat corect
+}
+
+</script>
+</body>
+</html>
